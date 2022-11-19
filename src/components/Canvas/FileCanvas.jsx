@@ -57,14 +57,14 @@ const FileCanvas = ({ dragUrl }) => {
             Array(totalPage)
                 .fill(0)
                 .map((i) => React.createRef()),
-        []
+        [totalPage]
     );
 
     useEffect(() => {
         return () => {
             clearCanvasList();
         };
-    }, []);
+    }, [totalPage]);
 
     return (
         <FileCanvasWrap>
@@ -103,7 +103,14 @@ const FileCanvas = ({ dragUrl }) => {
                             onDragOver={(e) => {
                                 e.preventDefault();
                             }}
+                            onTouchMove={(e) => {
+                                e.preventDefault();
+                            }}
                             onDrop={(e) => {
+                                e.preventDefault();
+                                dropImageHandler(e, i, dragUrl);
+                            }}
+                            onTouchEnd={(e) => {
                                 e.preventDefault();
                                 dropImageHandler(e, i, dragUrl);
                             }}

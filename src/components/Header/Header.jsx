@@ -30,12 +30,11 @@ const HeaderFileControlButton = ({ title, srcList }) => {
     const { openModal } = useUiContext();
 
     const buttonClickHandler = () => {
-        console.log("hi");
-        if (title == "archive") openModal("archiveAlert");
-        if (title == "trash") openModal("trashAlert");
+        if (title === "archive") openModal("archiveAlert");
+        if (title === "trash") openModal("trashAlert");
     };
 
-    if (title == "download" && fileList && createFileList.at(-1).filePages) {
+    if (title === "download" && fileList && createFileList.at(-1).filePages) {
         return (
             <PDFDownloadLink
                 document={
@@ -81,7 +80,7 @@ const buttonList = [
 
 export const FileHeader = ({ title, prevState, nextState }) => {
     const { fileList, dragImageList } = useFileContext();
-    const { openModal, closeModal } = useUiContext();
+    const { openModal } = useUiContext();
 
     const matchState = useMatch("/*")?.params["*"];
 
@@ -98,6 +97,8 @@ export const FileHeader = ({ title, prevState, nextState }) => {
             case "finish":
                 navigate("/");
                 break;
+            default:
+                return;
         }
     };
 

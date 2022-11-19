@@ -1,8 +1,6 @@
 import { useRef } from "react";
 import { useFileContext } from "../../../context/FileContext";
 import {
-    add_d,
-    download,
     page,
     page_h,
     pic,

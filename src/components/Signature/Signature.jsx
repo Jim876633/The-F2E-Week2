@@ -19,6 +19,9 @@ const Signature = ({ id, url, dragUrl }) => {
             onDragStart={() => {
                 dragUrl.current = url;
             }}
+            onTouchStart={() => {
+                dragUrl.current = url;
+            }}
         >
             <CloseLayout showRemove={showRemove}>
                 <Button
@@ -30,7 +33,7 @@ const Signature = ({ id, url, dragUrl }) => {
                     <Image src={close_s} w="3rem" />
                 </Button>
             </CloseLayout>
-            <Button title="signature">
+            <Button title="signature" w="100%" h="100%">
                 <Image src={url} h="100%" w="100%" />
             </Button>
         </SignatureStyle>

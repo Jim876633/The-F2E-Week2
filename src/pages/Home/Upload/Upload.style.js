@@ -46,8 +46,8 @@ export const FileUploadWrap = styled.div`
         position: relative;
         display: grid;
         place-content: center;
-        width: 20rem;
-        height: 26rem;
+        width: ${(props) => (props.load ? "fit-content" : "20rem")};
+        height: ${(props) => (props.load ? "fit-content" : "26rem")};
         margin-bottom: 1rem;
         border: 1px solid var(--clr-gray-40);
     }

@@ -5,14 +5,16 @@ export const SignFileStyle = styled.div`
     width: 100%;
     height: 100%;
     min-height: 0; //fix overlow problem in flex-box . Amazing !!!
+    hr {
+        margin-inline: 1rem;
+    }
 `;
 
 export const AddSignatureWrap = styled.div`
     display: flex;
     flex-direction: column;
-
     height: 100%;
-    width: 40%;
+    width: 30%;
     padding: 1rem 2rem;
     gap: 1rem;
 `;
@@ -37,6 +39,6 @@ export const SignatureWrap = styled.div`
 `;
 
 export const FileWrap = styled.div`
-    width: 100%;
+    width: 70%;
     height: 100%;
 `;

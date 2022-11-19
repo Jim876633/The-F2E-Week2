@@ -1,14 +1,14 @@
-import { useMatch } from "react-router-dom";
 import { darklogo_h, help, user } from "../../shared/imageList";
 import Button from "../Button/Button";
 import { UploadStateHeader } from "../Header/Header";
+import Image from "../Image/Image";
 import { NavbarStyle } from "./Navbar.style";
 
 const Navbar = ({ stateListTitle, activeIndex }) => {
     return (
         <NavbarStyle>
-            <Button h="4.5rem" type="link" title="Home">
-                <img src={darklogo_h} alt="logo" />
+            <Button type="link" title="Home">
+                <Image src={darklogo_h} alt="logo" h="4.5rem" />
             </Button>
             {activeIndex >= 0 ? (
                 <UploadStateHeader

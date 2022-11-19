@@ -9,9 +9,6 @@ export const SignatureStyle = styled.div`
     overflow: hidden;
     background: var(--clr-white);
     height: 10rem;
-    & > button {
-        height: 100%;
-    }
 `;
 
 export const CloseLayout = styled.div`

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Image, Transformer } from "react-konva";
 import useImage from "use-image";
 import { useFileContext } from "../../context/FileContext";
@@ -14,7 +14,7 @@ const SignCanvas = ({
     selectHandler,
     isSelected,
 }) => {
-    const { changeDragImageList, dragImageList } = useFileContext();
+    const { changeDragImageList } = useFileContext();
 
     const [img] = useImage(src);
 
@@ -57,7 +57,20 @@ const SignCanvas = ({
                 onClick={() => {
                     selectHandler(page, id);
                 }}
+                onTouchStart={() => {
+                    selectHandler(page, id);
+                }}
                 onDragEnd={(e) => {
+                    changeDragImageList(page, id, {
+                        x: e.target.x(),
+                        y: e.target.y(),
+                        src,
+                        id,
+                        width,
+                        height,
+                    });
+                }}
+                onTouchEnd={(e) => {
                     changeDragImageList(page, id, {
                         x: e.target.x(),
                         y: e.target.y(),

@@ -5,7 +5,7 @@ const FileContext = React.createContext();
 export const FileContextProvider = ({ children }) => {
     const [fileList, setFileList] = useState(null);
 
-    const [totalPage, setTotalPage] = useState();
+    const [totalPage, setTotalPage] = useState(null);
 
     const [canvasList, setCanvasList] = useState([]);
 
@@ -52,6 +52,7 @@ export const FileContextProvider = ({ children }) => {
 
     const removeFileHandler = () => {
         setFileList(null);
+        setTotalPage(null);
     };
 
     const changeFileName = (newName) => {
