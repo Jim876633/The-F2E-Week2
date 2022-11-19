@@ -1,4 +1,3 @@
-// import { PDFDownloadLink } from "@react-pdf/renderer";
 import GlobalStyle from "./shared/GlobalStyle";
 import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
@@ -50,7 +49,3 @@ const App = () => {
 };
 
 export default App;
-
-// <PDFDownloadLink document={<Pdf />} fileName="test">
-//     {(loading) => (loading ? "loading" : "download")}
-// </PDFDownloadLink>

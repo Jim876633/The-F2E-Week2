@@ -140,7 +140,7 @@ const FileCanvas = ({ dragUrl }) => {
                                                   />
                                               );
                                           })
-                                        : ""}
+                                        : null}
                                 </Layer>
                             </Stage>
                         </CanvasWrap>

@@ -1,6 +1,6 @@
-import ReactPDF, { PDFDownloadLink } from "@react-pdf/renderer";
 import React from "react";
-import { Link, Outlet, useMatch, useNavigate } from "react-router-dom";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import { Outlet, useMatch, useNavigate } from "react-router-dom";
 import { useFileContext } from "../../context/FileContext";
 import { useUiContext } from "../../context/UiContext";
 import useHover from "../../hooks/useHover";

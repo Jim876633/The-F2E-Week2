@@ -49,6 +49,7 @@ const SignatureList = ({ dragUrl, buttonList }) => {
             </EmptyWrap>
         );
     }
+    return null;
 };
 
 export default SignatureList;

@@ -1,4 +1,10 @@
-import { Document, Page, Image, StyleSheet, View } from "@react-pdf/renderer";
+import {
+    Document as MyDocument,
+    Page as MyPage,
+    Image,
+    StyleSheet,
+    View,
+} from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
     image: {
@@ -20,15 +26,15 @@ const styles = StyleSheet.create({
 const RenderPDFLib = ({ imageList }) => {
     if (imageList) {
         return (
-            <Document>
+            <MyDocument>
                 {imageList.map((src, i) => (
-                    <Page key={i}>
+                    <MyPage key={i}>
                         <View style={styles.view}>
                             <Image src={src} style={styles.image} />
                         </View>
-                    </Page>
+                    </MyPage>
                 ))}
-            </Document>
+            </MyDocument>
         );
     }
 };
