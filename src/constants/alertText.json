@@ -1,0 +1,37 @@
+{
+    "upload": {
+        "text": "確定放棄編輯文件？",
+        "ButtonText1": "先不要",
+        "ButtonText2": "放棄"
+    },
+    "sign": {
+        "text": "確定要放棄已編輯內容？",
+        "ButtonText1": "先不要",
+        "ButtonText2": "放棄"
+    },
+    "signature": {
+        "text": "確定要刪除此簽名？",
+        "ButtonText1": "先不要",
+        "ButtonText2": "刪除"
+    },
+    "image": {
+        "text": "確定要刪除此圖片？",
+        "ButtonText1": "先不要",
+        "ButtonText2": "刪除"
+    },
+    "finish": {
+        "text": "確定已完成簽署文件？",
+        "ButtonText1": "先不要",
+        "ButtonText2": "確定"
+    },
+    "archive": {
+        "text": "確定要封存此檔案？",
+        "ButtonText1": "先不要",
+        "ButtonText2": "封存"
+    },
+    "delete": {
+        "text": "確定要刪除此檔案？",
+        "ButtonText1": "先不要",
+        "ButtonText2": "刪除"
+    }
+}
