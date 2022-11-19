@@ -22,8 +22,8 @@ const FileCanvasWrap = styled.div`
 const CanvasWrap = styled.section`
     display: grid;
     place-content: center;
-    width: 70rem;
-    height: 90rem;
+    min-width: fit-content;
+    padding: 5rem;
     background: var(--clr-gray-30);
     div {
         display: grid;
@@ -79,7 +79,6 @@ const FileCanvas = ({ dragUrl }) => {
                               <Page
                                   className="page-lg"
                                   pageNumber={i + 1}
-                                  height={2000}
                                   canvasRef={canvasRefs[i]}
                                   onRenderSuccess={() => {
                                       addFileCanvas(i, canvasRefs[i].current);
@@ -115,11 +114,13 @@ const FileCanvas = ({ dragUrl }) => {
                                 dropImageHandler(e, i, dragUrl);
                             }}
                         >
-                            <Stage width={595} height={842} ref={stageRefs[i]}>
+                            <Stage
+                                width={item.canvas.width}
+                                height={item.canvas.height}
+                                ref={stageRefs[i]}
+                            >
                                 <Layer>
                                     <Image
-                                        width={595}
-                                        height={842}
                                         x={0}
                                         y={0}
                                         image={item.canvas}
