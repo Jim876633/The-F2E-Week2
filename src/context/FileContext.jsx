@@ -78,6 +78,15 @@ export const FileContextProvider = ({ children }) => {
         setDragImageList([]);
     };
 
+    const clearAllUploadState = () => {
+        setFileList(null);
+        setTotalPage(null);
+        setCanvasList([]);
+        setCurrentPage(0);
+        setSignatureType("sign");
+        setDragImageList([]);
+    };
+
     const addSignature = (type, obj) => {
         if (signImageObj[type]) {
             const imageList = signImageObj[type];
@@ -181,6 +190,7 @@ export const FileContextProvider = ({ children }) => {
         getCurrentPage,
         addFileCanvas,
         clearCanvasList,
+        clearAllUploadState,
         addSignature,
         removeSignature,
         signatureTypeHandler,

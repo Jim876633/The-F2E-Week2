@@ -1,5 +1,5 @@
 import { FileStyle, TagList } from "./File.style";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FileList from "./FileList";
 import FileForm from "./FileForm";
 import Button from "../../../components/Button/Button";
@@ -12,7 +12,7 @@ const tagList = [
     { tag: "trash", title: "垃圾桶", image: trash_h },
 ];
 const File = () => {
-    const { createFileList } = useFileContext();
+    const { createFileList, clearAllUploadState } = useFileContext();
 
     const [tagItem, setTagItem] = useState(tagList[0]);
 
@@ -23,6 +23,11 @@ const File = () => {
     const tagClickHandler = (i) => {
         setTagItem(tagList[i]);
     };
+    useEffect(() => {
+        return () => {
+            clearAllUploadState();
+        };
+    }, []);
 
     return (
         <FileStyle>
