@@ -19,6 +19,7 @@ import useHover from "../../../hooks/useHover";
 import { useFileContext } from "../../../context/FileContext";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import RenderPDFLib from "../../../lib/RenderPDFLib";
+import { formatTime } from "../../../utils/formatTimeToDate";
 const getControlButtons = (tag) => {
     switch (tag) {
         case "file":
@@ -80,7 +81,7 @@ const ButtonList = ({ title, srcList, clickHandler }) => {
     );
 };
 
-const FileItem = ({ tag, date, time, title, filePages, status, fileStyle }) => {
+const FileItem = ({ tag, time, title, filePages, status, fileStyle }) => {
     //hover state
     const { hover, hoverHandler } = useHover();
 
@@ -118,8 +119,10 @@ const FileItem = ({ tag, date, time, title, filePages, status, fileStyle }) => {
                         h="4rem"
                     />
                 )}
-                <p>{date}</p>
-                <p>{time}</p>
+                <p>
+                    <span>{formatTime(time)[0]}</span>
+                    <span>{formatTime(time)[1]}</span>
+                </p>
                 <p>{title}</p>
                 <ButtonListWrap>{controlButons}</ButtonListWrap>
             </FileItemStyle>

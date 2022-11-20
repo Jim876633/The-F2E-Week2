@@ -9,17 +9,24 @@ export const FileItemStyle = styled.div`
     & > *:nth-child(2) {
         margin-inline: 2rem;
     }
-    & > *:nth-child(4) {
+    & > *:nth-child(3) {
         margin-inline: 3rem auto;
+    }
+    span + span {
+        margin-left: 1rem;
     }
     ${(props) =>
         props.fileStyle === "card"
             ? css`
                   flex-direction: column;
-                  & > *:nth-child(4) {
+                  & > *:nth-child(3) {
                       margin-inline: auto;
                   }
-                  gap: 1rem;
+                  span {
+                      font-size: var(--fz-capation);
+                      color: var(--clr-gray-40);
+                  }
+                  gap: 0.5rem;
               `
             : ""}
 `;

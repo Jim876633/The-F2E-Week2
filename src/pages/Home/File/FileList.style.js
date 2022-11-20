@@ -16,7 +16,7 @@ export const FileListWrap = styled.div`
         props.fileStyle === "card"
             ? css`
                   display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(20rem, 23%));
+                  grid-template-columns: repeat(auto-fit, minmax(20rem, 25%));
                   justify-content: center;
               `
             : ""}
