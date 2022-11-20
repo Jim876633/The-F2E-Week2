@@ -19,6 +19,7 @@ export const FileItemStyle = styled.div`
                   & > *:nth-child(4) {
                       margin-inline: auto;
                   }
+                  gap: 1rem;
               `
             : ""}
 `;

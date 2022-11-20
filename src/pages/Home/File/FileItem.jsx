@@ -80,7 +80,7 @@ const ButtonList = ({ title, srcList, clickHandler }) => {
     );
 };
 
-const FileItem = ({ tag, date, time, title, status, fileStyle }) => {
+const FileItem = ({ tag, date, time, title, filePages, status, fileStyle }) => {
     //hover state
     const { hover, hoverHandler } = useHover();
 
@@ -105,13 +105,19 @@ const FileItem = ({ tag, date, time, title, status, fileStyle }) => {
             leave={hoverHandler}
         >
             <FileItemStyle fileStyle={fileStyle}>
-                <Image
-                    srcList={[file_item, file_item_h]}
-                    alt={status}
-                    hover={hover}
-                    w="4rem"
-                    h="4rem"
-                />
+                {fileStyle === "card" ? (
+                    <div style={{ border: "1px solid var(--clr-gray-30)" }}>
+                        <Image src={filePages[0]} w="10rem" />
+                    </div>
+                ) : (
+                    <Image
+                        srcList={[file_item, file_item_h]}
+                        alt={status}
+                        hover={hover}
+                        w="4rem"
+                        h="4rem"
+                    />
+                )}
                 <p>{date}</p>
                 <p>{time}</p>
                 <p>{title}</p>
