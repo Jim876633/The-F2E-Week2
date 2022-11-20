@@ -35,6 +35,7 @@ export const StateDot = styled.span`
     border-radius: 50%;
     background: transparent;
     margin-top: -1.5rem;
+
     &::after {
         content: attr(data-state);
         display: block;
@@ -52,18 +53,34 @@ export const StateDot = styled.span`
         top: calc(50% - 1px);
         width: calc((30rem - 1.6rem * 3) / 2);
         height: 2px;
-        background: var(--clr-gray-40);
+        background-image: linear-gradient(
+            90deg,
+            var(--clr-primary) 0%,
+            var(--clr-primary) 50%,
+            var(--clr-gray-40) 50%
+        );
+        background-size: 200%;
+        background-position: right;
+        transition: all 0.5s;
     }
     ${(props) => {
         if (props.index === props.activeIndex) {
             return css`
                 border: 2px solid var(--clr-primary);
                 box-shadow: 0 0 0 4px var(--shadow-primary);
+                transition: all 0.2s 0.5s;
+                &::before {
+                    background-position: left !important;
+                }
             `;
         } else if (props.activeIndex > props.index) {
             return css`
                 border: 2px solid var(--clr-primary);
                 background: var(--clr-primary);
+                transition: all 0.2s;
+                &::before {
+                    background-position: left !important;
+                }
             `;
         }
     }};
