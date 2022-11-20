@@ -2,7 +2,7 @@
 
 線上簽署 PDF 檔。
 
-[💻 Live Demo]()
+[💻 Live Demo](https://jim-the-f2e-week2.netlify.app/)
 
 [🎨 Design provider](https://2022.thef2e.com/users/12061549261454740203)
 
@@ -15,6 +15,17 @@
 3. 使用 `React-signature-canvas` 產出可以簽名的 `Canvas`。
 4. 使用 `Konva` 將圖片匯入 `Canvas` 並能拖曳圖片進去。
 5. 使用 `React-pdf/renderer` 轉成 PDF 並下載。
+
+## 功能
+
+-   首頁
+    -   文件列表有清單及卡片模式。
+    -   不同標籤顯示不同狀態的文件列表。
+-   上傳文件
+    -   上傳 PDF 檔並可更改檔名。
+    -   可新增手寫簽名，並拖曳至 PDF 頁面。
+    -   合併後文件預覽。
+    -   完成後文件可進行下載、封存、刪除。
 
 ## 資料夾說明
 
